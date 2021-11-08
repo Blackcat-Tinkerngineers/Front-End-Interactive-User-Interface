@@ -35,8 +35,8 @@
 - THEN I am again presented with the poster, plot and ratings of that certain movie.
 
 ### Deployed application link
+ https://alma-dev914.github.io/Group-5-Creation/
 
-https://marcusxhale1.github.io/Group-5-Creation/
 
 #### Snaphot of the application
 
