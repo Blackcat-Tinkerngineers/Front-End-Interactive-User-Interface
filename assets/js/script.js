@@ -7,7 +7,8 @@ var criticsReviewEl = document.querySelector
 ("#critic-ratings");
 var dropdownEl = document.querySelector("#dropdown");
 var searchMovies = [];
-
+var trailerEl = document.querySelector("#trailer")
+var date = moment().format("l")
 //search bar function//
 //what happens when search is clicked//
 searchButtonEl.addEventListener("click", function(event){
@@ -16,10 +17,11 @@ searchButtonEl.addEventListener("click", function(event){
    posterEl.textContent = "";
    userReviewEl.textContent = "";
    criticsReviewEl.textContent = "";
+   trailerEl.textContent = "";
    saveMovies();
    title(movies);
    ratings(movies);
-
+   getTrailers(movies);
 });
 
 //API fetch function for poster and plot from TMDB//
@@ -71,6 +73,21 @@ fetch("https://www.omdbapi.com/?t=" + movies + "&apikey=f46c4fdd")
       criticsReviewEl.appendChild(directorEl);
       criticsReviewEl.appendChild(actorEl);
       
+   });
+});
+};
+
+function getTrailers(movies){
+var movies = inputEl.value.trim();
+fetch("https://api.themoviedb.org/3/movie/videos?api_key=59f1dde07824b010cf1e04f299a8730e&language=en-US&append_to_response=videos&site=YouTube&type=Trailer&name=" + movies)
+.then(function(response){
+   response.json()
+   .then(function(data){
+      console.log(data);
+      var movieVideoEl = document.createElement("iframe");
+      movieVideoEl.setAttribute("src", movies)
+      movieVideoEl.setAttribute ("style", "title='YouTube video player'  frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen")
+     trailerEl.append(movieVideoEl)
    });
 });
 };
@@ -131,10 +148,6 @@ function showHistory() {
 loadMovies();
 
 //}); 
-
-
-
-
 
 
 
