@@ -7,7 +7,6 @@ var criticsReviewEl = document.querySelector
 ("#critic-ratings");
 var dropdownEl = document.querySelector("#dropdown");
 var searchMovies = [];
-var trailerEl = document.querySelector("#trailer")
 var date = moment().format("l")
 //search bar function//
 //what happens when search is clicked//
@@ -37,16 +36,16 @@ function title(movies){
    var titleEl = document.createElement("h2")  
    var posterImgEl = document.createElement("img");
    var ratingEl = document.createElement("p")
-   var moreInfoEl = document.createElement("iframe");
+   
    posterImgEl.setAttribute("src", "https://image.tmdb.org/t/p/original/" + data.results[0].poster_path);
    titleEl.textContent = data.results[0].title;
    //pathing from data for display//
    userReviewEl.textContent = data.results[0].overview;
-   moreInfoEl.setAttribute("src", "https://image.tmdb.org/t/p/original/" + data.results[0].backdrop_path);
+   
    posterEl.append(titleEl)
    posterEl.append(posterImgEl);
    criticsReviewEl.appendChild(ratingEl);
-   trailerEl.appendChild(moreInfoEl);
+  
    });
 });
 };
