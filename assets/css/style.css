@@ -61,9 +61,13 @@ img{
   width: 100%;
   
 }
+.modal{
+    text-align: center;
+}
 /* style the link text */
 a:active{
   color: rgb(0, 255, 149);
+  
 }
 a:visited{
   color: #1caee7;

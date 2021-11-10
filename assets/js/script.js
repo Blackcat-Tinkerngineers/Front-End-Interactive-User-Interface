@@ -7,7 +7,7 @@ var criticsReviewEl = document.querySelector
 ("#critic-ratings");
 var dropdownEl = document.querySelector("#dropdown");
 var searchMovies = [];
-var date = moment().format("l")
+
 //search bar function//
 //what happens when search is clicked//
 searchButtonEl.addEventListener("click", function(event){
@@ -41,11 +41,11 @@ function title(movies){
    titleEl.textContent = data.results[0].title;
    //pathing from data for display//
    userReviewEl.textContent = data.results[0].overview;
-   
+
    posterEl.append(titleEl)
    posterEl.append(posterImgEl);
    criticsReviewEl.appendChild(ratingEl);
-  
+   
    });
 });
 };
