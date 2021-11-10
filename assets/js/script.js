@@ -16,7 +16,7 @@ searchButtonEl.addEventListener("click", function(event){
    posterEl.textContent = "";
    userReviewEl.textContent = "";
    criticsReviewEl.textContent = "";
-   trailerEl.textContent = "";
+  
    saveMovies();
    title(movies);
    ratings(movies);
