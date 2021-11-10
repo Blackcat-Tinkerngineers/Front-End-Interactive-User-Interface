@@ -21,7 +21,6 @@ searchButtonEl.addEventListener("click", function(event){
    saveMovies();
    title(movies);
    ratings(movies);
-   getTrailers(movies);
 });
 
 //API fetch function for poster and plot from TMDB//
@@ -38,17 +37,20 @@ function title(movies){
    var titleEl = document.createElement("h2")  
    var posterImgEl = document.createElement("img");
    var ratingEl = document.createElement("p")
+   var moreInfoEl = document.createElement("iframe");
    posterImgEl.setAttribute("src", "https://image.tmdb.org/t/p/original/" + data.results[0].poster_path);
    titleEl.textContent = data.results[0].title;
    //pathing from data for display//
    userReviewEl.textContent = data.results[0].overview;
+   moreInfoEl.setAttribute("src", "https://image.tmdb.org/t/p/original/" + data.results[0].backdrop_path);
    posterEl.append(titleEl)
    posterEl.append(posterImgEl);
    criticsReviewEl.appendChild(ratingEl);
-   
+   trailerEl.appendChild(moreInfoEl);
    });
 });
 };
+
 //API fetch function for ratings from OMDB//
 function ratings(movies){
 fetch("https://www.omdbapi.com/?t=" + movies + "&apikey=f46c4fdd")
@@ -67,7 +69,7 @@ fetch("https://www.omdbapi.com/?t=" + movies + "&apikey=f46c4fdd")
       ratingEl.textContent = "Internet Movie Database: " + data.Ratings[0].Value;
       directorEl.textContent = "Director: " + data.Director + ","  + " Writer: " + data.Writer;
       actorEl.textContent =  " Actors: " + data.Actors;
-      
+     
       //titleEl.textContent = data.Title;
       criticsReviewEl.appendChild(ratingEl);
       criticsReviewEl.appendChild(directorEl);
@@ -77,20 +79,6 @@ fetch("https://www.omdbapi.com/?t=" + movies + "&apikey=f46c4fdd")
 });
 };
 
-function getTrailers(movies){
-var movies = inputEl.value.trim();
-fetch("https://api.themoviedb.org/3/movie/videos?api_key=59f1dde07824b010cf1e04f299a8730e&language=en-US&append_to_response=videos&site=YouTube&type=Trailer&name=" + movies)
-.then(function(response){
-   response.json()
-   .then(function(data){
-      console.log(data);
-      var movieVideoEl = document.createElement("iframe");
-      movieVideoEl.setAttribute("src", movies)
-      movieVideoEl.setAttribute ("style", "title='YouTube video player'  frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen")
-     trailerEl.append(movieVideoEl)
-   });
-});
-};
 
 //function for saving, displaying, and re-displaying old searches//
 function saveMovies(){
