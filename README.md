@@ -48,6 +48,7 @@ SOFTWARE.
 
 ### USER STORY
 
+
 - AS A Movie Lover
 - I WANT to see different plot of movies and their ratings.
 - SO THAT I can plan the next movie to watch.
@@ -61,12 +62,14 @@ SOFTWARE.
 - THEN I am again presented with the poster, plot and ratings of that certain movie.
 
 ### Deployed application link
-  https://alma-dev914.github.io/Front-End-Interactive-User-Interface-/
+ https://blackcat-tinkerngineers.github.io/Front-End-Interactive-User-Interface/ 
 
 
 #### Snaphot of the application
 
 ![20211031_200322](https://user-images.githubusercontent.com/65073138/139616159-85b813e9-00b9-4ff2-9d25-11e1e5c28a80.jpg)
+
+![screen-shot-1](https://user-images.githubusercontent.com/88634637/148708466-3f6a0095-33ec-49d5-88fc-656130a6f689.png)
 
 <img width="1792" alt="Screen Shot 2021-11-08 at 4 10 47 PM" src="https://user-images.githubusercontent.com/65073138/140838056-d52db822-8f62-4743-be39-132d4485b9c7.png">
 
