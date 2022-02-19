@@ -62,7 +62,7 @@ SOFTWARE.
 - THEN I am again presented with the poster, plot and ratings of that certain movie.
 
 ### Deployed application link
- https://blackcat-tinkerngineers.github.io/Front-End-Interactive-User-Interface/ 
+https://blackcat-tinkerngineers.github.io/stories-on-the-go
 
 
 #### Snaphot of the application
